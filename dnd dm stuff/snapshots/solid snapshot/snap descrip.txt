@@ -1,0 +1,86 @@
+# Program Overview - Digital Dungeon Master (Snapshot Description)
+
+## 1. Purpose
+The program is designed to serve as a **Digital Dungeon Master** for D&D 3.5, automating character creation, managing game rules, and generating player character sheets in PDF format. It integrates race and class data dynamically, allowing users to customize characters with ease.
+
+---
+
+## 2. Files in the Program
+
+### a) `dm_project.py` (Main Script)
+- **Functionality**:
+  - Imports `class_data` and `race_data`.
+  - Builds a graphical user interface (GUI) for character creation.
+  - Populates dropdowns for **Races** and **Classes** dynamically.
+  - Handles user inputs and assigns attributes such as skills and modifiers.
+  - Generates a **PDF character sheet** for created characters.
+- **Key Sections**:
+  1. **Imports**: Imports Python modules and data files.
+  2. **Utility Functions**: Contains helper methods for handling UI logic and PDF creation.
+  3. **PDF Generation**: Uses placeholders to insert dynamic data like attributes and skills into a PDF template.
+  4. **Character Creation UI**: A graphical interface for user interaction.
+
+---
+
+### b) `class_data.py` (Class Information)
+- **Content**:
+  - Defines 15 classes, including `Barbarian`, `Bard`, `Cleric`, etc.
+  - Each class includes:
+    - **Description**: A detailed summary of the class.
+    - **Subclasses**: Options for specializations with descriptions.
+    - **Weapon and Armor Proficiencies**: Specifies the class's combat abilities.
+    - **Features**: Unique abilities available to the class.
+    - **Skill Modifiers**: Attributes and proficiencies affecting gameplay.
+    - **Hit Die**: Defines the class's health scaling.
+- **Key Strengths**:
+  - Structured format for easy integration into the UI.
+  - Comprehensive class-specific data for gameplay.
+
+---
+
+### c) `race_data.py` (Race Information)
+- **Content**:
+  - Defines 15 races, including `Elf`, `Human`, `Dwarf`, etc.
+  - Attributes for each race:
+    - **Description**: Detailed lore and gameplay implications.
+    - **Male & Female Traits**: Distinctive physical and role-playing features.
+    - **Level Adjustment**: Affects balance for gameplay.
+    - **Skill Modifiers**: Specific bonuses for skill checks.
+  - Includes a function, `update_race_data_for_skills()`, to dynamically generate a dictionary of all race data with modifiers.
+- **Key Strengths**:
+  - Rich descriptions and skill-based adjustments.
+  - Multiline strings for readability.
+
+---
+
+## 3. Current Functionality
+- **Dynamic Dropdowns**: GUI populates race and class options from external data files.
+- **PDF Generation**: Exports character sheets with attributes, skills, and descriptions.
+- **Skill Assignment**: Correctly integrates skill modifiers based on class and race.
+- **Data Consistency**: No missing classes or races in data files.
+
+---
+
+## 4. Recommendations for Future Development
+1. **Expand Features**:
+   - Add support for spells or equipment management.
+   - Include a "Random Character Generator" feature.
+2. **Enhance Data Handling**:
+   - Separate reusable utilities (e.g., file readers, data updaters) into a dedicated module.
+   - Consider storing data in a database or JSON for easier management.
+3. **Error Handling**:
+   - Add validation checks for unexpected inputs or empty fields during character creation.
+4. **Testing Framework**:
+   - Develop automated tests for GUI interactions and PDF generation.
+
+---
+
+## 5. Validation Summary
+- Dropdowns populate dynamically and accurately.
+- Skill assignment is functioning as expected. but key skills not selectable yet.
+- PDF generation outputs character sheets without errors.
+
+---
+
+## 6. Program Status
+**Snapshot validated successfully.** only known bug is after first ability score selected uplicate numbers compress to one option. bug is workaroundable.

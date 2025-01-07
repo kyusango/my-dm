@@ -1,0 +1,264 @@
+import random
+import os
+import pickle
+import tkinter as tk
+from tkinter import messagebox
+
+# Function to start a new game or continue an existing one
+def main_menu():
+    def start_new_game():
+        window.destroy()  # Close the main menu window
+        setting = welcome()
+        character = create_character()
+        messagebox.showinfo("Character Created", f"Your character {character['name']} is a {character['gender']} {character['race']} {character['class']} in a {setting} world.")
+        save_game(character, setting)
+        start_game_loop(character)
+
+    def continue_game():
+        if os.path.exists("save_game.pkl"):
+            with open("save_game.pkl", "rb") as file:
+                character, setting = pickle.load(file)
+                messagebox.showinfo("Welcome Back", f"Welcome back, {character['name']} the {character['gender']} {character['race']} {character['class']}!")
+                window.destroy()  # Close the main menu window
+                start_game_loop(character)
+        else:
+            messagebox.showinfo("No Saved Game", "No saved game found. Starting a new game...")
+            start_new_game()
+
+    window = tk.Tk()
+    window.title("DM Program")
+    window.geometry("400x200")
+
+    title_label = tk.Label(window, text="Welcome to the DM Program!", font=("Arial", 14))
+    title_label.pack(pady=20)
+
+    new_game_button = tk.Button(window, text="New Game", width=20, command=start_new_game)
+    new_game_button.pack(pady=10)
+
+    continue_game_button = tk.Button(window, text="Continue", width=20, command=continue_game)
+    continue_game_button.pack(pady=10)
+
+    window.mainloop()
+
+# Function to initialize the game world setting
+def welcome():
+    def select_setting():
+        setting = setting_var.get()
+        window.quit()
+        window.destroy()  # Close the window after selecting the setting
+        return setting
+
+    window = tk.Tk()
+    window.title("Select Setting")
+    window.geometry("400x200")
+
+    title_label = tk.Label(window, text="Select your adventure setting", font=("Arial", 14))
+    title_label.pack(pady=20)
+
+    setting_var = tk.StringVar()
+    setting_var.set("Fantasy")  # Default setting
+
+    fantasy_button = tk.Radiobutton(window, text="Fantasy", variable=setting_var, value="Fantasy")
+    fantasy_button.pack(pady=5)
+
+    sci_fi_button = tk.Radiobutton(window, text="Sci-fi", variable=setting_var, value="Sci-fi")
+    sci_fi_button.pack(pady=5)
+
+    horror_button = tk.Radiobutton(window, text="Horror", variable=setting_var, value="Horror")
+    horror_button.pack(pady=5)
+
+    confirm_button = tk.Button(window, text="Confirm", command=select_setting)
+    confirm_button.pack(pady=10)
+
+    window.mainloop()
+
+# Character creation function with ability scores
+def create_character():
+    def submit_character():
+        name = name_entry.get()
+        gender = gender_var.get()
+        race = race_var.get()
+        class_choice = class_var.get()
+        subclass_choice = subclass_var.get()
+        ability_scores = generate_ability_scores(race)
+        ability_scores = assign_ability_scores(ability_scores, race)
+        
+        character = {
+            "name": name,
+            "gender": gender,
+            "race": race,
+            "class": class_choice,
+            "subclass": subclass_choice,
+            "ability_scores": ability_scores
+        }
+        window.quit()
+        window.destroy()  # Close the window after submitting
+        return character
+
+    window = tk.Tk()
+    window.title("Character Creation")
+    window.geometry("400x400")
+
+    title_label = tk.Label(window, text="Create Your Character", font=("Arial", 14))
+    title_label.pack(pady=20)
+
+    name_label = tk.Label(window, text="Enter Character Name:")
+    name_label.pack(pady=5)
+    name_entry = tk.Entry(window)
+    name_entry.pack(pady=5)
+
+    gender_var = tk.StringVar()
+    gender_label = tk.Label(window, text="Select Gender:")
+    gender_label.pack(pady=5)
+
+    male_button = tk.Radiobutton(window, text="Male", variable=gender_var, value="Male")
+    male_button.pack(pady=5)
+    female_button = tk.Radiobutton(window, text="Female", variable=gender_var, value="Female")
+    female_button.pack(pady=5)
+    neither_button = tk.Radiobutton(window, text="Neither", variable=gender_var, value="Neither")
+    neither_button.pack(pady=5)
+
+    race_var = tk.StringVar()
+    race_label = tk.Label(window, text="Select Race:")
+    race_label.pack(pady=5)
+
+    race_options = [
+        "Human", "Elf", "Dwarf", "Halfling", "Gnome", "Half-Elf", "Half-Orc", "Tiefling", 
+        "Aasimar", "Dragonborn", "Warforged", "Kobold", "Goblin", "Orc", "Svirfneblin (Deep Gnome)", 
+        "Lizardfolk", "Genasi", "Shifter", "Changeling", "Triton", "Githyanki", "Githzerai", 
+        "Hobgoblin", "Minotaur", "Ratfolk", "Nagaji", "Tabaxi"
+    ]
+    race_var.set(race_options[0])  # Set default race to "Human"
+    race_menu = tk.OptionMenu(window, race_var, *race_options)
+    race_menu.pack(pady=5)
+
+    class_var = tk.StringVar()
+    class_label = tk.Label(window, text="Select Class:")
+    class_label.pack(pady=5)
+
+    class_options = [
+        "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", 
+        "Sorcerer", "Wizard", "Artificer", "Psion", "Psychic Warrior"
+    ]
+    class_var.set(class_options[0])  # Set default class to "Barbarian"
+    class_menu = tk.OptionMenu(window, class_var, *class_options)
+    class_menu.pack(pady=5)
+
+    # Subclass options
+    subclass_label = tk.Label(window, text="Select Subclass:")
+    subclass_label.pack(pady=5)
+    
+    # Subclass dropdown (initially empty)
+    subclass_var = tk.StringVar()
+    subclass_menu = tk.OptionMenu(window, subclass_var, "")
+    subclass_menu.pack(pady=5)
+
+    # Subclasses data
+    subclasses_data = {
+        "Barbarian": [
+            {"name": "Berserker", "description": "Focused on rage and brutal attacks. Known for their frenzy and overwhelming damage."},
+            {"name": "Totem Warrior", "description": "Focuses on spiritual connection with animal totems, gaining enhanced abilities."}
+        ],
+        "Bard": [
+            {"name": "College of Lore", "description": "A jack-of-all-trades bard, excelling in knowledge, magic, and support."},
+            {"name": "College of Valor", "description": "A warrior bard who inspires bravery and combats foes through both combat and magic."}
+        ],
+        "Cleric": [
+            {"name": "Life Domain", "description": "Focuses on healing, vitality, and bringing life to the world."},
+            {"name": "Light Domain", "description": "Focuses on radiant energy and the forces of good to banish darkness and evil."},
+            {"name": "Trickery Domain", "description": "Focuses on deception, stealth, and illusion to deceive enemies and aid allies."}
+        ],
+        "Druid": [
+            {"name": "Circle of the Land", "description": "Draws power from natural environments, gaining abilities related to the terrain they call home."},
+            {"name": "Circle of the Moon", "description": "A shapeshifting druid that transforms into more powerful beasts in combat."}
+        ],
+        "Fighter": [
+            {"name": "Champion", "description": "A master of combat and physical prowess, excelling at improving critical strikes and fighting techniques."},
+            {"name": "Battle Master", "description": "A tactician who specializes in battlefield control, using combat maneuvers to gain the advantage."}
+        ],
+        "Monk": [
+            {"name": "Way of the Open Hand", "description": "A monk focused on unarmed strikes and martial discipline, capable of manipulating the bodies of their foes."},
+            {"name": "Way of the Shadow", "description": "A monk specializing in stealth, deception, and shadow magic, blending martial arts with supernatural powers to move unseen and strike swiftly."}
+        ],
+        "Paladin": [
+            {"name": "Oath of Devotion", "description": "A paladin who devotes themselves to honor, righteousness, and the protection of others."},
+            {"name": "Path of Vengeance", "description": "A paladin consumed by the need to avenge wrongs and punish evildoers, often adopting a relentless and unyielding approach to justice."}
+        ],
+        "Ranger": [
+            {"name": "Hunter", "description": "A master of tracking and hunting, skilled at dealing damage to specific enemies."},
+            {"name": "Beast Master", "description": "A ranger who forms a bond with an animal companion, relying on teamwork and loyalty."}
+        ],
+        "Rogue": [
+            {"name": "Thief", "description": "A rogue who specializes in stealing, sneaking, and getting in and out of places undetected."},
+            {"name": "Assassin", "description": "A deadly rogue trained in silent killings, specializing in sneak attacks and poisons."}
+        ],
+        "Sorcerer": [
+            {"name": "Draconic Bloodline", "description": "A sorcerer with the blood of dragons, gaining powers tied to elemental forces and resilience."},
+            {"name": "Shadow Bloodline", "description": "A sorcerer with the blood of shadow creatures, capable of manipulating darkness and controlling shadows."}
+        ],
+        "Wizard": [
+            {"name": "School of Abjuration", "description": "A wizard who specializes in protective magic, creating shields and defenses."},
+            {"name": "School of Evocation", "description": "A wizard who focuses on creating powerful blasts of magic to damage foes."},
+            {"name": "School of Illusion", "description": "A wizard who focuses on tricking the senses and creating illusions to deceive enemies."}
+        ],
+        "Artificer": [
+            {"name": "Alchemist", "description": "Focuses on creating potions, bombs, and other magical items to support the party."},
+            {"name": "Artillerist", "description": "An artificer who specializes in creating ranged weapons and mechanical constructs to deal damage."},
+            {"name": "Battle Smith", "description": "A warrior-like artificer who builds a mechanical companion and uses magic to enhance their own combat abilities."}
+        ],
+        "Psion": [
+            {"name": "Telepath", "description": "Focuses on manipulating minds, reading thoughts, and dominating foes."},
+            {"name": "Kineticist", "description": "Specializes in using mental energy to move and shape objects, create force blasts, and control elements."},
+            {"name": "Nomad", "description": "A psion who manipulates space and time, capable of teleporting and controlling the battlefield."}
+        ],
+        "Psychic Warrior": [
+            {"name": "Bodyguard", "description": "Focuses on protecting others using psychic energy to bolster defenses and defend allies."},
+            {"name": "Wilder", "description": "A more erratic psychic warrior who gains unrestrained psionic abilities at the cost of unpredictability."}
+        ],
+        "Soulknife": [
+            {"name": "Blade Adept", "description": "Focuses on enhancing their psychic blade and fighting techniques to deal damage and defend."},
+            {"name": "Knife Master", "description": "Specializes in using multiple psychic blades and taking down opponents quickly."}
+        ]
+        #add more classes as needed here
+    }
+
+    def update_subclasses(*args):
+        class_choice = class_var.get()
+        subclasses = subclasses_data.get(class_choice, [])
+        subclass_choices = [subclass["name"] for subclass in subclasses]
+        subclass_var.set(subclass_choices[0] if subclass_choices else "")
+        subclass_menu['menu'].delete(0, 'end')
+        for subclass in subclass_choices:
+            subclass_menu['menu'].add_command(label=subclass, command=tk._setit(subclass_var, subclass))
+
+    class_var.trace("w", update_subclasses)
+
+    submit_button = tk.Button(window, text="Submit", command=submit_character)
+    submit_button.pack(pady=10)
+
+    window.mainloop()
+
+# Helper functions for ability scores and class generation
+def generate_ability_scores(race):
+    scores = {"Strength": random.randint(8, 18), "Dexterity": random.randint(8, 18),
+              "Constitution": random.randint(8, 18), "Intelligence": random.randint(8, 18),
+              "Wisdom": random.randint(8, 18), "Charisma": random.randint(8, 18)}
+    return scores
+
+def assign_ability_scores(ability_scores, race):
+    if race == "Human":
+        ability_scores["Strength"] += 1
+        ability_scores["Dexterity"] += 1
+        ability_scores["Constitution"] += 1
+        ability_scores["Intelligence"] += 1
+        ability_scores["Wisdom"] += 1
+        ability_scores["Charisma"] += 1
+    return ability_scores
+
+def save_game(character, setting):
+    with open("save_game.pkl", "wb") as file:
+        pickle.dump((character, setting), file)
+
+# Main entry point
+if __name__ == "__main__":
+    main_menu()

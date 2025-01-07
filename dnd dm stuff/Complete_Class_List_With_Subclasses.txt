@@ -1,0 +1,96 @@
+
+### Class List with Subclasses
+
+#### Barbarian
+Barbarians are primal warriors who channel their raw rage and physical prowess to dominate the battlefield. Their resilience and ferocity make them nearly unstoppable, thriving in chaos and battle. Masters of survival, they excel in harsh environments and unrelenting combat.
+- **Subclasses**:
+  - **Berserker**: Focused on rage and brutal attacks. Known for their frenzy and overwhelming damage.
+  - **Totem Warrior**: Focuses on spiritual connection with animal totems, gaining enhanced abilities.
+
+#### Bard
+Bards are charismatic performers and versatile spellcasters, blending music, lore, and magic to inspire allies and manipulate foes. Their versatility allows them to adapt to any role, from weaving powerful enchantments to providing much-needed support or guidance.
+- **Subclasses**:
+  - **College of Lore**: A jack-of-all-trades bard, excelling in knowledge, magic, and support.
+  - **College of Valor**: A warrior bard who inspires bravery and combats foes through both combat and magic.
+
+#### Cleric
+Clerics are devout champions of their deities, wielding divine power to heal, protect, and smite their enemies. Whether as guardians of light, bringers of justice, or masters of trickery, clerics adapt their abilities to suit their faith and their allies' needs.
+- **Subclasses**:
+  - **Life Domain**: Focuses on healing, vitality, and bringing life to the world.
+  - **Light Domain**: Focuses on radiant energy and the forces of good to banish darkness and evil.
+  - **Trickery Domain**: Focuses on deception, stealth, and illusion to deceive enemies and aid allies.
+
+#### Druid
+Druids are keepers of the natural order, channeling the primal forces of nature to protect the wilderness and those who depend on it. With the ability to shape-shift into animals and command natural magic, druids embody the balance between civilization and the wild.
+- **Subclasses**:
+  - **Circle of the Land**: Draws power from natural environments, gaining abilities related to the terrain they call home.
+  - **Circle of the Moon**: A shapeshifting druid that transforms into more powerful beasts in combat.
+
+#### Fighter
+Fighters are masters of arms and tactics, excelling in both offensive and defensive combat. Their diverse training allows them to wield a variety of weapons and armor, making them versatile warriors capable of adapting to any battlefield.
+- **Subclasses**:
+  - **Champion**: A master of combat and physical prowess, excelling at improving critical strikes and fighting techniques.
+  - **Battle Master**: A tactician who specializes in battlefield control, using combat maneuvers to gain the advantage.
+
+#### Monk
+Monks are disciplined warriors who blend martial arts and spiritual training to achieve physical and mental mastery. With unmatched agility and precision, they can channel their ki energy to deliver devastating strikes, deflect attacks, and transcend mortal limitations.
+- **Subclasses**:
+  - **Way of the Open Hand**: A monk focused on unarmed strikes and martial discipline, capable of manipulating the bodies of their foes.
+  - **Way of the Shadow**: A monk specializing in stealth, deception, and shadow magic, blending martial arts with supernatural powers to move unseen and strike swiftly.
+
+#### Paladin
+Paladins are noble warriors bound by sacred oaths, combining divine magic with martial prowess to protect the innocent and punish the wicked. Their unwavering commitment to justice and righteousness fuels their ability to heal, smite enemies, and inspire hope.
+- **Subclasses**:
+  - **Oath of Devotion**: A paladin who devotes themselves to honor, righteousness, and the protection of others.
+  - **Oath of Vengeance**: A paladin consumed by the need to avenge wrongs and punish evildoers, often adopting a relentless and unyielding approach to justice.
+
+#### Ranger
+Rangers are skilled trackers and survivalists, adept at hunting their prey and navigating the wilderness. Their bond with nature grants them unique abilities, while their expertise in combat allows them to strike swiftly and accurately, whether with a bow or blade.
+- **Subclasses**:
+  - **Hunter**: A master of tracking and hunting, skilled at dealing damage to specific enemies.
+  - **Beast Master**: A ranger who forms a bond with an animal companion, relying on teamwork and loyalty.
+
+#### Rogue
+Rogues are cunning and resourceful adventurers who excel at stealth, deception, and precision. Masters of the shadows, they can disarm traps, infiltrate secure areas, and deliver devastating sneak attacks to their unsuspecting foes.
+- **Subclasses**:
+  - **Thief**: A rogue who specializes in stealing, sneaking, and getting in and out of places undetected.
+  - **Assassin**: A deadly rogue trained in silent killings, specializing in sneak attacks and poisons.
+
+#### Sorcerer
+Sorcerers wield magic born from their inherent connection to powerful forces, such as draconic bloodlines or cosmic influences. Unlike wizards, their magic flows naturally, allowing them to unleash devastating spells with raw, unrestrained potential.
+- **Subclasses**:
+  - **Draconic Bloodline**: A sorcerer with the blood of dragons, gaining powers tied to elemental forces and resilience.
+  - **Shadow Bloodline**: A sorcerer with the blood of shadow creatures, capable of manipulating darkness and controlling shadows.
+
+#### Wizard
+Wizards are learned spellcasters who unlock the mysteries of the arcane through study and practice. With access to a vast array of spells, they use their intellect to manipulate reality, summoning creatures, bending elements, and altering the fabric of existence.
+- **Subclasses**:
+  - **School of Abjuration**: A wizard who specializes in protective magic, creating shields and defenses.
+  - **School of Evocation**: A wizard who focuses on creating powerful blasts of magic to damage foes.
+  - **School of Illusion**: A wizard who focuses on tricking the senses and creating illusions to deceive enemies.
+
+#### Artificer
+Artificers are ingenious inventors who combine magical infusions with mechanical creations. By crafting magical items and constructs, they bring innovation to the battlefield, supporting their allies and surprising their foes with technological marvels.
+- **Subclasses**:
+  - **Alchemist**: Focuses on creating potions, bombs, and other magical items to support the party.
+  - **Artillerist**: An artificer who specializes in creating ranged weapons and mechanical constructs to deal damage.
+  - **Battle Smith**: A warrior-like artificer who builds a mechanical companion and uses magic to enhance their own combat abilities.
+
+#### Psion
+Psions are masters of the mind, harnessing their intellect to tap into psionic powers. With the ability to manipulate thoughts, control energy, and shape reality, they wield mental abilities that rival traditional magic in both creativity and destruction.
+- **Subclasses**:
+  - **Telepath**: Focuses on manipulating minds, reading thoughts, and dominating foes.
+  - **Kineticist**: Specializes in using mental energy to move and shape objects, create force blasts, and control elements.
+  - **Nomad**: A psion who manipulates space and time, capable of teleporting and controlling the battlefield.
+
+#### Psychic Warrior
+Psychic Warriors blend martial prowess with psionic energy, channeling their focus to enhance their physical strength and mental resilience. These disciplined combatants use their mind to shield allies, bolster attacks, and turn the tide of battle.
+- **Subclasses**:
+  - **Bodyguard**: Focuses on protecting others using psychic energy to bolster defenses and defend allies.
+  - **Wilder**: A more erratic psychic warrior who gains unrestrained psionic abilities at the cost of unpredictability.
+
+#### Soulknife
+Soulknives are elite warriors who manifest psionic blades, shaping pure mental energy into deadly weapons. With unmatched precision and stealth, they excel at striking from the shadows and defeating their enemies with efficiency and cunning.
+- **Subclasses**:
+  - **Blade Adept**: Focuses on enhancing their psychic blade and fighting techniques to deal damage and defend.
+  - **Knife Master**: Specializes in using multiple psychic blades and taking down opponents quickly.

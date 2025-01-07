@@ -1,0 +1,28 @@
+Human
+Elf
+Dwarf
+Halfling
+Gnome
+Half-Elf
+Half-Orc
+Tiefling
+Aasimar
+Dragonborn (Available in Eberron)
+Warforged (Available in Eberron)
+Kobolds (Available in Pathfinder)
+Goblins (Available in Pathfinder)
+Orcs (Available in Pathfinder)
+Svirfneblin (Deep Gnome)
+Lizardfolk 
+Genasi
+Shifter
+Changeling 
+Triton
+Githyanki
+Githzerai
+Planetouched
+Hobgoblin
+Minotaur
+Catfolk
+Ratfolk
+Nagaji

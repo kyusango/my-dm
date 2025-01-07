@@ -1,0 +1,160 @@
+
+RCS List: Race, Class, Subclass
+
+Races:
+
+1. Human
+   Humans are the most adaptable and ambitious among the common races, capable of excelling in any class or role. Their ambition and determination make them natural leaders and innovators in any setting.
+   - Male: Human males are often slightly taller and more muscular, with a strong presence in martial or leadership roles.
+   - Female: Human females tend to be slightly leaner and are often depicted as resourceful and diplomatic, with equal capability to excel in combat or intellectual pursuits.
+
+2. Elf
+   Elves are known for their grace, longevity, and deep connection to magic and nature. Their innate dexterity and intelligence make them natural wizards, rangers, or rogues. Elves often have keen senses, darkvision, and the ability to enter a meditative trance instead of sleep.
+   - Male: Male elves are elegant, with sharp, angular features and a focus on artistic or martial endeavors.
+   - Female: Female elves exhibit softer features and often exude beauty and grace, with a deep affinity for nature or magical arts.
+
+3. Dwarf
+   Dwarves are resilient and sturdy, renowned for their craftsmanship and combat prowess. They have natural resistance to poison, proficiency with axes and hammers, and a strong sense of community. Dwarves also possess darkvision, a necessity for life underground.
+   - Male: Male dwarves are robust, with thick beards that signify status and pride. They excel in crafting and heavy combat roles.
+   - Female: Female dwarves are similarly stout and strong, often playing key roles in leadership or cultural preservation.
+
+4. Halfling
+   Halflings are small but lucky and brave, known for their cheerful demeanor and nimbleness. Their "Lucky" trait allows them to avoid critical failures, and their dexterity and charisma make them ideal rogues, bards, or sorcerers.
+   - Male: Male halflings are practical and curious, often venturing out as adventurers or craftsmen.
+   - Female: Female halflings are often depicted as meticulous and socially adept, serving as community leaders or diplomats.
+
+5. Gnome
+   Gnomes are clever and inventive, with a natural affinity for illusion magic and mechanical tinkering. They are resistant to mind-affecting magic and possess darkvision, making them ideal wizards, artificers, or bards.
+   - Male: Male gnomes are often eccentric inventors or alchemists, focused on creation and exploration.
+   - Female: Female gnomes tend to be artistic or nurturing, blending creativity with practicality in their pursuits.
+
+6. Half-Elf
+   Half-elves inherit the grace of their elven lineage and the versatility of their human heritage. They are charismatic and adaptable, with darkvision and resistance to charm. Their innate social skills make them natural bards, sorcerers, or paladins.
+   - Male: Male half-elves are often athletic and ambitious, balancing physical prowess with social adeptness.
+   - Female: Female half-elves are graceful and charismatic, often excelling in leadership or diplomatic roles.
+
+7. Half-Orc
+   Half-orcs combine the strength and endurance of their orcish heritage with human intelligence and adaptability. They are fierce warriors with darkvision and a savage attack trait that enhances their critical hits.
+   - Male: Male half-orcs are larger and more physically imposing, often excelling as front-line combatants.
+   - Female: Female half-orcs are equally strong but may emphasize strategy or leadership within their communities.
+
+8. Tiefling
+   Tieflings are marked by their infernal heritage, often with horns, tails, and glowing eyes. They possess innate magic, resistance to fire, and high charisma, making them natural warlocks, sorcerers, or bards.
+   - Male: Male tieflings have sharp, angular features and often exude an intimidating aura.
+   - Female: Female tieflings are typically more enigmatic or seductive, using their charm and cunning to navigate social and magical challenges.
+
+9. Aasimar
+   Aasimar are celestial beings with radiant appearances and a strong connection to divine energy. They have resistance to necrotic and radiant damage, darkvision, and the ability to heal others or unleash celestial power.
+   - Male: Male aasimar are commanding and radiant, often embodying leadership and strength.
+   - Female: Female aasimar are serene and graceful, with an ethereal beauty that inspires allies and confounds foes.
+
+10. Dragonborn
+   Dragonborn are humanoid descendants of dragons, with scaled skin and a breath weapon unique to their lineage. They have resistance to elemental damage and a natural inclination for strength or charisma.
+   - Male: Male dragonborn are larger, with pronounced horns or frills, and excel in physical combat.
+   - Female: Female dragonborn are sleek and refined, often channeling their heritage into magical or strategic endeavors.
+
+11. Warforged
+   Warforged are living constructs, combining metal and wood, built for resilience and adaptability. They have innate armor, immunity to disease, and do not require food, drink, or sleep.
+   - Male: Male warforged may adopt masculine traits in their design or behavior, often emphasizing strength and endurance.
+   - Female: Female warforged might exhibit sleeker designs or nurturing roles, though these are purely aesthetic or self-assigned.
+
+12. Kobold
+   Kobolds are small dragonkin with resourceful minds and a pack mentality. They possess darkvision, are sensitive to sunlight, and gain advantages when working in groups.
+   - Male: Male kobolds often feature larger crests or frills and focus on building or combat roles.
+   - Female: Female kobolds are more likely to take on leadership, magical, or caretaking roles within their tribes.
+
+13. Goblin
+   Goblins are cunning and resourceful, with small, wiry bodies. They have nimble escape abilities and darkvision, making them ideal rogues or rangers.
+   - Male: Male goblins are typically more aggressive and physically active, excelling in combat or sneaky tactics.
+   - Female: Female goblins are equally cunning but may emphasize strategy, manipulation, or leadership roles.
+
+14. Orc
+   Orcs are known for their immense strength and aggressive nature. They have darkvision, relentless endurance, and a cultural emphasis on combat and honor.
+   - Male: Male orcs are larger and often serve as warriors or tribal leaders.
+   - Female: Female orcs are just as fierce but may combine combat skills with resource management or strategic planning.
+
+15. Svirfneblin (Deep Gnome)
+   Svirfneblin, or Deep Gnomes, are subterranean dwellers with a natural affinity for stealth and survival. They have darkvision and resistance to illusions, making them ideal rogues or wizards.
+   - Male: Male Svirfneblin are pragmatic and industrious, focusing on mining or crafting.
+   - Female: Female Svirfneblin often take on leadership or magical roles, excelling in community-focused endeavors.
+
+Classes and Subclasses:
+
+Barbarian
+Barbarians are primal warriors who channel their raw rage and physical prowess to dominate the battlefield. Their resilience and ferocity make them nearly unstoppable, thriving in chaos and battle. Masters of survival, they excel in harsh environments and unrelenting combat.
+- Berserker: Focused on rage and brutal attacks. Known for their frenzy and overwhelming damage.
+- Totem Warrior: Focuses on spiritual connection with animal totems, gaining enhanced abilities.
+
+Bard
+Bards are charismatic performers and versatile spellcasters, blending music, lore, and magic to inspire allies and manipulate foes. Their versatility allows them to adapt to any role, from weaving powerful enchantments to providing much-needed support or guidance.
+- College of Lore: A jack-of-all-trades bard, excelling in knowledge, magic, and support.
+- College of Valor: A warrior bard who inspires bravery and combats foes through both combat and magic.
+
+Cleric
+Clerics are devout champions of their deities, wielding divine power to heal, protect, and smite their enemies. Whether as guardians of light, bringers of justice, or masters of trickery, clerics adapt their abilities to suit their faith and their allies' needs.
+- Life Domain: Focuses on healing, vitality, and bringing life to the world.
+- Light Domain: Focuses on radiant energy and the forces of good to banish darkness and evil.
+- Trickery Domain: Focuses on deception, stealth, and illusion to deceive enemies and aid allies.
+
+Druid
+Druids are keepers of the natural order, channeling the primal forces of nature to protect the wilderness and those who depend on it. With the ability to shape-shift into animals and command natural magic, druids embody the balance between civilization and the wild.
+- Circle of the Land: Draws power from natural environments, gaining abilities related to the terrain they call home.
+- Circle of the Moon: A shapeshifting druid that transforms into more powerful beasts in combat.
+
+Fighter
+Fighters are masters of arms and tactics, excelling in both offensive and defensive combat. Their diverse training allows them to wield a variety of weapons and armor, making them versatile warriors capable of adapting to any battlefield.
+- Champion: A master of combat and physical prowess, excelling at improving critical strikes and fighting techniques.
+- Battle Master: A tactician who specializes in battlefield control, using combat maneuvers to gain the advantage.
+
+Monk
+Monks are disciplined warriors who blend martial arts and spiritual training to achieve physical and mental mastery. With unmatched agility and precision, they can channel their ki energy to deliver devastating strikes, deflect attacks, and transcend mortal limitations.
+- Way of the Open Hand: A monk focused on unarmed strikes and martial discipline, capable of manipulating the bodies of their foes.
+- Way of the Shadow: A monk specializing in stealth, deception, and shadow magic, blending martial arts with supernatural powers to move unseen and strike swiftly.
+
+Paladin
+Paladins are noble warriors bound by sacred oaths, combining divine magic with martial prowess to protect the innocent and punish the wicked. Their unwavering commitment to justice and righteousness fuels their ability to heal, smite enemies, and inspire hope.
+- Oath of Devotion: A paladin who devotes themselves to honor, righteousness, and the protection of others.
+- Oath of Vengeance: A paladin consumed by the need to avenge wrongs and punish evildoers, often adopting a relentless and unyielding approach to justice.
+
+Ranger
+Rangers are skilled trackers and survivalists, adept at hunting their prey and navigating the wilderness. Their bond with nature grants them unique abilities, while their expertise in combat allows them to strike swiftly and accurately, whether with a bow or blade.
+- Hunter: A master of tracking and hunting, skilled at dealing damage to specific enemies.
+- Beast Master: A ranger who forms a bond with an animal companion, relying on teamwork and loyalty.
+
+Rogue
+Rogues are cunning and resourceful adventurers who excel at stealth, deception, and precision. Masters of the shadows, they can disarm traps, infiltrate secure areas, and deliver devastating sneak attacks to their unsuspecting foes.
+- Thief: A rogue who specializes in stealing, sneaking, and getting in and out of places undetected.
+- Assassin: A deadly rogue trained in silent killings, specializing in sneak attacks and poisons.
+
+Sorcerer
+Sorcerers wield magic born from their inherent connection to powerful forces, such as draconic bloodlines or cosmic influences. Unlike wizards, their magic flows naturally, allowing them to unleash devastating spells with raw, unrestrained potential.
+- Draconic Bloodline: A sorcerer with the blood of dragons, gaining powers tied to elemental forces and resilience.
+- Shadow Bloodline: A sorcerer with the blood of shadow creatures, capable of manipulating darkness and controlling shadows.
+
+Wizard
+Wizards are learned spellcasters who unlock the mysteries of the arcane through study and practice. With access to a vast array of spells, they use their intellect to manipulate reality, summoning creatures, bending elements, and altering the fabric of existence.
+- School of Abjuration: A wizard who specializes in protective magic, creating shields and defenses.
+- School of Evocation: A wizard who focuses on creating powerful blasts of magic to damage foes.
+- School of Illusion: A wizard who focuses on tricking the senses and creating illusions to deceive enemies.
+
+Artificer
+Artificers are ingenious inventors who combine magical infusions with mechanical creations. By crafting magical items and constructs, they bring innovation to the battlefield, supporting their allies and surprising their foes with technological marvels.
+- Alchemist: Focuses on creating potions, bombs, and other magical items to support the party.
+- Artillerist: An artificer who specializes in creating ranged weapons and mechanical constructs to deal damage.
+- Battle Smith: A warrior-like artificer who builds a mechanical companion and uses magic to enhance their own combat abilities.
+
+Psion
+Psions are masters of the mind, harnessing their intellect to tap into psionic powers. With the ability to manipulate thoughts, control energy, and shape reality, they wield mental abilities that rival traditional magic in both creativity and destruction.
+- Telepath: Focuses on manipulating minds, reading thoughts, and dominating foes.
+- Kineticist: Specializes in using mental energy to move and shape objects, create force blasts, and control elements.
+- Nomad: A psion who manipulates space and time, capable of teleporting and controlling the battlefield.
+
+Psychic Warrior
+Psychic Warriors blend martial prowess with psionic energy, channeling their focus to enhance their physical strength and mental resilience. These disciplined combatants use their mind to shield allies, bolster attacks, and turn the tide of battle.
+- Bodyguard: Focuses on protecting others using psychic energy to bolster defenses and defend allies.
+- Wilder: A more erratic psychic warrior who gains unrestrained psionic abilities at the cost of unpredictability.
+
+Soulknife
+Soulknives are elite warriors who manifest psionic blades, shaping pure mental energy into deadly weapons. With unmatched precision and stealth, they excel at striking from the shadows and defeating their enemies with efficiency and cunning.
+- Blade Adept: Focuses on enhancing their psychic blade and fighting techniques to deal damage and defend.
+- Knife Master: Specializes in using multiple psychic blades and taking down opponents quickly.
