@@ -732,7 +732,7 @@ def determine_ability(skill):
         "Knowledge (Nature)": "Intelligence", "Knowledge (Nobility)": "Intelligence",
         "Knowledge (Religion)": "Intelligence", "Knowledge (The Planes)": "Intelligence",
         "Listen": "Wisdom", "Move Silently": "Dexterity", "Open Lock": "Dexterity",
-        "Perform": "Charisma", "Perform (Sing)": "Charisma",
+        "Perform (Dance)": "Charisma", "Perform (Sing)": "Charisma",
         "Profession (Sailor)": "Wisdom", "Profession (Cook)": "Wisdom",
         "Ride": "Dexterity", "Search": "Intelligence", "Sense Motive": "Wisdom",
         "Sleight of Hand": "Dexterity", "Spellcraft": "Intelligence", "Spot": "Wisdom",
