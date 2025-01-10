@@ -1,0 +1,251 @@
+{
+    "general": {
+      "code_environment": "VS Code Python 3.11",
+      "game_mechanics": "D&D 3.5"
+    },
+    "references": {
+      "classes": {
+        "description": "Contains information about classes, including descriptions, features, subclasses, and proficiencies.",
+        "file": "class_data.py",
+        "usage": "Must be used to define class-specific mechanics and features in the game."
+      },
+      "races": {
+        "description": "Contains information about races, including descriptions, traits, skill modifiers, and level adjustments.",
+        "file": "race_data.py",
+        "usage": "Must be used to define race-specific mechanics and features in the game."
+      }
+    },
+    "screen_flow": {
+      "steps": [
+        {
+          "name": "Main Window",
+          "description": "Displays the welcome screen with options to create a character, load a saved game in progress, start a new game with a character from another save file, or quit the program.",
+          "function": "main_window",
+          "details": {
+            "menu_options": [
+              "Create Character",
+              "Load Game",
+              "Start New Game with Saved Character",
+              "Quit Program"
+            ],
+            "implementation_status": "Implemented"
+          }
+        },
+        {
+          "name": "Character Creation",
+          "description": "Collects character details such as name, gender, race, class, subclass, and alignment.",
+          "function": "create_character",
+          "details": {
+            "input_fields": [
+              "Name",
+              "Gender",
+              "Race (dropdown based on race_data.py)",
+              "Class (dropdown based on class_data.py)",
+              "Subclass (updated dynamically based on class)",
+              "Alignment (dropdown)"
+            ],
+            "implementation_status": "Implemented"
+          }
+        },
+        {
+          "name": "Ability Score Allocation",
+          "description": "Allows the user to allocate rolled ability scores to different abilities.",
+          "function": "allocate_ability_scores",
+          "details": {
+            "mechanic": "Roll 4d6, drop the lowest die, and sum the remaining three. Repeat six times for six ability scores.",
+            "allocation_method": "Drag-and-drop or dropdown menus for each ability (Strength, Dexterity, etc.)",
+            "implementation_status": "Implemented"
+          }
+        },
+        {
+          "name": "Confirm Scores",
+          "description": "Confirms the allocated scores and calculates total skill points.",
+          "function": "confirm_scores",
+          "details": {
+            "calculation": "Skill points = (class skill modifier + intelligence modifier) × level (usually 1 for new characters).",
+            "mechanics": "Checks that all ability scores have been assigned.",
+            "implementation_status": "Implemented"
+          }
+        },
+        {
+          "name": "Primary Skill Selection",
+          "description": "Allows the user to select primary skills based on the class and available skill points.",
+          "function": "show_primary_skills_screen",
+          "details": {
+            "skill_selection": "Display a list of class-specific skills with checkboxes or dropdowns to allocate points.",
+            "validation": "Ensure the user does not exceed the allocated skill points.",
+            "implementation_status": "Implemented"
+          }
+        },
+        {
+          "name": "Feat Selection",
+          "description": "Allows the user to select their first feat based on prerequisites.",
+          "function": "feat_selection",
+          "details": {
+            "prerequisites": "Validate prerequisites such as ability scores, race, and class features before enabling feat selection.",
+            "selection_method": "Dropdown or list with filters based on eligibility.",
+            "implementation_status": "Not Implemented"
+          }
+        },
+        {
+          "name": "Character Sheet Display",
+          "description": "Displays the final character sheet with all selected attributes on the left half of the screen. On the right half is a simulated chatroom where the program runs the D&D game and the user can provide inputs.",
+          "function": "show_character_sheet",
+          "details": {
+            "character_sheet_layout": {
+              "left_panel": "Displays character details (name, race, class, HP, Spell Slots, skills, feats, Alignment, A scrollable window for items and equipment carried).",
+              "right_panel": "Simulated chatroom for game interaction."
+            },
+            "pdf_generation": "Calls generate_pdf function to save the character sheet at beginning of function.",
+            "implementation_status": "Partially Implemented"
+          }
+        }
+      ]
+    }
+  }
+  {
+    "Program": {
+        "Overview": "A D&D 3.5 character creation tool with a Tkinter-based graphical interface. Supports character creation, ability score allocation, skill selection, and PDF output of character sheets.",
+        "Functions": [
+            {
+                "name": "generate_character_sheet",
+                "arguments": [
+                    "character_data",
+                    "file_name='character_sheet.pdf'"
+                ],
+                "description": "Generates a PDF character sheet with character details, ability scores, and skills.",
+                "logic": [
+                    "1. Sets up a PDF canvas.",
+                    "2. Draws character name, race, class, level, and alignment.",
+                    "3. Lists ability scores with their values.",
+                    "4. Generates a skills section displayed in two columns with placeholders for modifiers.",
+                    "5. Saves the PDF file."
+                ]
+            },
+            {
+                "name": "allocate_ability_scores",
+                "arguments": [
+                    "character_data",
+                    "setting"
+                ],
+                "description": "Rolls six ability scores using 4d6 (dropping the lowest) and allows users to allocate them to abilities.",
+                "logic": [
+                    "1. Rolls six ability scores and sorts them in descending order.",
+                    "2. Displays the scores in a dropdown for allocation to Strength, Dexterity, etc.",
+                    "3. Validates that each score is uniquely assigned.",
+                    "4. Saves allocated scores to character data."
+                ]
+            },
+            {
+                "name": "show_primary_skills_screen",
+                "arguments": [
+                    "character_data"
+                ],
+                "description": "Displays a screen where users can select primary skills based on total skill points.",
+                "logic": [
+                    "1. Retrieves total skill points from character data.",
+                    "2. Displays skills in two columns with checkboxes.",
+                    "3. Limits selection to the number of available skill points.",
+                    "4. Saves selected skills to character data."
+                ]
+            },
+            {
+                "name": "update_subclasses",
+                "arguments": [
+                    "class_var",
+                    "subclass_var",
+                    "subclass_menu"
+                ],
+                "description": "Updates the available subclass options dynamically based on the selected class.",
+                "logic": [
+                    "1. Retrieves the selected class from `class_var`.",
+                    "2. Fetches subclass options from `class_data`.",
+                    "3. Populates the subclass menu with relevant options."
+                ]
+            }
+        ],
+        "DataStructures": {
+            "race_data": {
+                "Elf": {
+                    "description": "Elves are known for their grace, longevity, and deep connection to magic and nature.",
+                    "skill_modifiers": {
+                        "Spot": 2,
+                        "Listen": 2
+                    },
+                    "level_adjustment": 0
+                },
+                "Human": {
+                    "description": "Humans are the most adaptable and ambitious among the common races.",
+                    "skill_modifiers": {},
+                    "level_adjustment": 0
+                }
+            },
+            "class_data": {
+                "Barbarian": {
+                    "description": "Primal warriors who channel rage and physical prowess to dominate the battlefield.",
+                    "skill_points_per_level": 4,
+                    "hit_die": "d12",
+                    "features": [
+                        {
+                            "name": "Rage",
+                            "level": 1,
+                            "scaling": {
+                                "1": "1/day",
+                                "4": "2/day"
+                            }
+                        },
+                        {
+                            "name": "Fast Movement",
+                            "level": 1
+                        }
+                    ]
+                },
+                "Wizard": {
+                    "description": "Scholarly spellcasters who wield vast magical power through study and preparation.",
+                    "skill_points_per_level": 2,
+                    "hit_die": "d4",
+                    "features": [
+                        {
+                            "name": "Arcane Spells",
+                            "level": 1
+                        }
+                    ]
+                }
+            }
+        },
+        "Calculations": {
+            "Skill Points": "For level 1: (class skill points + Intelligence modifier) \u00d7 4. For subsequent levels: class skill points + Intelligence modifier.",
+            "Ability Modifiers": "(Ability Score - 10) // 2.",
+            "Saving Throws": {
+                "Good Progression": "Starts at +2, increases by +1 every even level.",
+                "Poor Progression": "Starts at +0, increases by +1 every three levels."
+            },
+            "Hit Points": "Roll (or average) class hit die + Constitution modifier."
+        },
+        "ProgramFlow": [
+            "1. Main Menu: Users choose to start a new character or exit.",
+            "2. Character Creation: Users enter name, gender, race, class, subclass, and alignment.",
+            "3. Ability Score Allocation: Rolls and allocates ability scores.",
+            "4. Skill Selection: Assigns primary skills within skill point limits.",
+            "5. Character Sheet Display: Shows character details and generates a PDF."
+        ],
+        "Dependencies": [
+            {
+                "name": "race_data.py",
+                "purpose": "Defines racial traits and skill modifiers."
+            },
+            {
+                "name": "class_data.py",
+                "purpose": "Contains class definitions, including skill points, features, and spellcasting info."
+            },
+            {
+                "name": "Tkinter",
+                "purpose": "Handles the user interface."
+            },
+            {
+                "name": "reportlab",
+                "purpose": "Generates the PDF character sheet."
+            }
+        ]
+    }
+}
